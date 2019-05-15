@@ -44,10 +44,10 @@ class MyComponent extends React.Component {
     fetch("https://api.example.com/items")
       .then(res => res.json())
       .then(
-        (result) => {
+        ({ items }) => {
           this.setState({
             isLoaded: true,
-            items: result.items
+            items,
           });
         },
         // Note: it's important to handle errors here
